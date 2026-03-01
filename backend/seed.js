@@ -22,7 +22,7 @@ const seedData = async () => {
       name: 'Test Official',
       email: 'official@test.com',
       password: 'password123',
-      role: 'official',
+      role: 'district_officer',
       district: 'Kamrup'
     });
     await user.save();

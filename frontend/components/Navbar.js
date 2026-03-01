@@ -40,6 +40,11 @@ export default function Navbar({ user }) {
               <Link href="/submit-report" className="px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-200 font-medium text-sm sm:text-base backdrop-blur">
                 📝 Submit Report
               </Link>
+              {(user.role === 'district_officer' || user.role === 'admin') && (
+                <Link href="/prediction" className="px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-200 font-medium text-sm sm:text-base backdrop-blur flex items-center gap-2">
+                  🔮 Predict Risk
+                </Link>
+              )}
             </div>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-white/20">

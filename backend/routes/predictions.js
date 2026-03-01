@@ -2,23 +2,24 @@ const express = require('express');
 const HealthReport = require('../models/HealthReport');
 const OutbreakPrediction = require('../models/OutbreakPrediction');
 const aiService = require('../services/aiService');
+const notificationService = require('../services/notificationService');
 const { auth } = require('../middleware/auth');
+const { authorize } = require('../middleware/authorize');
 
 const router = express.Router();
 
-router.post('/predict', auth, async (req, res) => {
+router.post('/predict', auth, authorize('district_officer', 'admin'), async (req, res) => {
   try {
-    const { district } = req.body;
-    if (!district) return res.status(400).json({ error: 'District is required' });
-
+    const { village } = req.body;
+    
     const weekStart = new Date();
     weekStart.setDate(weekStart.getDate() - 7);
     const weekEnd = new Date();
 
-    const reports = await HealthReport.find({
-      district,
-      date: { $gte: weekStart, $lte: weekEnd }
-    });
+    const query = { date: { $gte: weekStart, $lte: weekEnd } };
+    if (village) query.villageName = village;
+
+    const reports = await HealthReport.find(query);
 
     if (reports.length === 0) {
       return res.status(400).json({ error: 'No reports found for the past week' });
@@ -28,7 +29,7 @@ router.post('/predict', auth, async (req, res) => {
     const prediction = await aiService.predictOutbreak(aggregatedData);
 
     const outbreakPrediction = new OutbreakPrediction({
-      district,
+      district: village || 'All Villages',
       weekStart,
       weekEnd,
       riskLevel: prediction.riskLevel,

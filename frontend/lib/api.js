@@ -24,7 +24,7 @@ export const reports = {
 };
 
 export const predictions = {
-  predict: (district) => api.post('/predict', { district }),
+  predict: (village) => api.post('/predict', { village }),
   getAll: (params) => api.get('/predictions', { params })
 };
 

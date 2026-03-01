@@ -29,7 +29,6 @@ export default function SubmitReportPage() {
     } else {
       const parsed = JSON.parse(userData);
       setUser(parsed);
-      setFormData(prev => ({ ...prev, district: parsed.district }));
     }
   }, [router]);
 
@@ -53,9 +52,12 @@ export default function SubmitReportPage() {
     try {
       await reports.submit(formData);
       setSuccess(true);
+      
+      window.dispatchEvent(new CustomEvent('reportSubmitted'));
+      
       setFormData({
         villageName: '',
-        district: user.district,
+        district: '',
         patientAge: '',
         symptoms: [],
         waterSourceType: 'well',
@@ -86,6 +88,7 @@ export default function SubmitReportPage() {
               <input
                 type="text"
                 required
+                placeholder="Enter village name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.villageName}
                 onChange={(e) => setFormData({ ...formData, villageName: e.target.value })}
@@ -97,9 +100,10 @@ export default function SubmitReportPage() {
               <input
                 type="text"
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-100"
+                placeholder="Enter district name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.district}
-                readOnly
+                onChange={(e) => setFormData({ ...formData, district: e.target.value })}
               />
             </div>
           </div>
@@ -111,6 +115,7 @@ export default function SubmitReportPage() {
               required
               min="0"
               max="120"
+              placeholder="Enter patient age"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
               value={formData.patientAge}
               onChange={(e) => setFormData({ ...formData, patientAge: e.target.value })}
@@ -155,6 +160,7 @@ export default function SubmitReportPage() {
                 type="number"
                 required
                 min="1"
+                placeholder="Enter number of cases"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.numberOfCasesReported}
                 onChange={(e) => setFormData({ ...formData, numberOfCasesReported: e.target.value })}

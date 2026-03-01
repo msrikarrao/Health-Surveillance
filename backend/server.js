@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const connectDB = require('./config/db');
+const connectDB = require('./middleware/config/db');
 
 const authRoutes = require('./routes/auth');
 const googleAuthRoutes = require('./routes/googleAuth');

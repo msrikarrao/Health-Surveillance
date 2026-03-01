@@ -22,7 +22,7 @@ router.post('/google', async (req, res) => {
         name,
         email,
         password: googleId || Math.random().toString(36), // Random password for OAuth users
-        role: 'official',
+        role: 'district_officer',
         district: 'Not specified' // User can update later
       });
       await user.save();
