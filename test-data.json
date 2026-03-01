@@ -1,0 +1,97 @@
+{
+  "testUser": {
+    "name": "Test Official",
+    "email": "official@test.com",
+    "password": "password123",
+    "role": "official",
+    "district": "Kamrup"
+  },
+  "sampleReports": [
+    {
+      "villageName": "Guwahati Village",
+      "district": "Kamrup",
+      "patientAge": 25,
+      "symptoms": ["diarrhea", "fever", "vomiting"],
+      "waterSourceType": "well",
+      "numberOfCasesReported": 3,
+      "sanitationLevel": "low",
+      "rainfallLevel": "high"
+    },
+    {
+      "villageName": "Dispur Village",
+      "district": "Kamrup",
+      "patientAge": 35,
+      "symptoms": ["diarrhea", "abdominal_pain", "nausea"],
+      "waterSourceType": "river",
+      "numberOfCasesReported": 5,
+      "sanitationLevel": "low",
+      "rainfallLevel": "high"
+    },
+    {
+      "villageName": "Guwahati Village",
+      "district": "Kamrup",
+      "patientAge": 12,
+      "symptoms": ["fever", "vomiting", "headache"],
+      "waterSourceType": "well",
+      "numberOfCasesReported": 2,
+      "sanitationLevel": "medium",
+      "rainfallLevel": "high"
+    },
+    {
+      "villageName": "Beltola Village",
+      "district": "Kamrup",
+      "patientAge": 45,
+      "symptoms": ["diarrhea", "fever"],
+      "waterSourceType": "tank",
+      "numberOfCasesReported": 4,
+      "sanitationLevel": "low",
+      "rainfallLevel": "medium"
+    },
+    {
+      "villageName": "Dispur Village",
+      "district": "Kamrup",
+      "patientAge": 8,
+      "symptoms": ["vomiting", "diarrhea", "abdominal_pain"],
+      "waterSourceType": "river",
+      "numberOfCasesReported": 6,
+      "sanitationLevel": "low",
+      "rainfallLevel": "high"
+    },
+    {
+      "villageName": "Jalukbari Village",
+      "district": "Kamrup",
+      "patientAge": 55,
+      "symptoms": ["jaundice", "fever", "nausea"],
+      "waterSourceType": "well",
+      "numberOfCasesReported": 2,
+      "sanitationLevel": "medium",
+      "rainfallLevel": "medium"
+    },
+    {
+      "villageName": "Guwahati Village",
+      "district": "Kamrup",
+      "patientAge": 30,
+      "symptoms": ["diarrhea", "vomiting"],
+      "waterSourceType": "well",
+      "numberOfCasesReported": 7,
+      "sanitationLevel": "low",
+      "rainfallLevel": "high"
+    },
+    {
+      "villageName": "Beltola Village",
+      "district": "Kamrup",
+      "patientAge": 18,
+      "symptoms": ["fever", "headache", "abdominal_pain"],
+      "waterSourceType": "tank",
+      "numberOfCasesReported": 3,
+      "sanitationLevel": "medium",
+      "rainfallLevel": "high"
+    }
+  ],
+  "expectedPrediction": {
+    "riskLevel": "HIGH",
+    "confidenceScore": 85,
+    "predictedDisease": "Cholera outbreak",
+    "explanation": "High number of diarrhea and vomiting cases clustered in villages with contaminated water sources (well/river) during high rainfall period with low sanitation."
+  }
+}
