@@ -1,0 +1,11 @@
+village,district,source_type,count,age_years,maintenance_status,chlorination,outbreak_history,infection_rate,source_risk_score,maintenance_risk_score,total_risk_score,chlorination_protection,source_type_numeric
+Village_A,Assam,well,3,5,good,1,1,0.15,0.4,0.3,0.35,0.7,1
+Village_A,Assam,tap,1,2,excellent,1,0,0.05,0.1,0.1,0.1,0.7,0
+Village_B,Assam,river,2,0,poor,0,0,0.35,0.8,0.7,0.75,1.0,3
+Village_B,Assam,well,2,8,fair,0,0,0.2,0.4,0.5,0.45,1.0,1
+Village_C,Tripura,tank,1,10,poor,0,2,0.45,0.6,0.7,0.6499999999999999,1.0,2
+Village_C,Tripura,well,4,6,fair,0,1,0.25,0.4,0.5,0.45,1.0,1
+Village_D,Meghalaya,well,2,3,good,1,0,0.1,0.4,0.3,0.35,0.7,1
+Village_D,Meghalaya,tap,2,1,excellent,1,0,0.02,0.1,0.1,0.1,0.7,0
+Village_E,Manipur,well,3,2,excellent,1,0,0.05,0.4,0.1,0.25,0.7,1
+Village_E,Manipur,tap,2,1,excellent,1,0,0.02,0.1,0.1,0.1,0.7,0

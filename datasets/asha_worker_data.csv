@@ -1,0 +1,9 @@
+asha_id,district,village,date,reports_count,vaccination_coverage,awareness_level,previous_outbreaks,awareness_numeric
+ASHA001,Assam,Village_A,2026-03-01,15,0.75,high,1,3
+ASHA002,Assam,Village_B,2026-03-05,8,0.45,medium,0,2
+ASHA003,Tripura,Village_C,2026-03-10,22,0.3,low,2,1
+ASHA001,Assam,Village_A,2026-03-15,18,0.75,high,1,3
+ASHA004,Meghalaya,Village_D,2026-03-20,12,0.6,medium,0,2
+ASHA002,Assam,Village_B,2026-03-25,10,0.45,medium,0,2
+ASHA003,Tripura,Village_C,2026-04-01,28,0.3,low,2,1
+ASHA005,Manipur,Village_E,2026-04-05,5,0.85,high,0,3
